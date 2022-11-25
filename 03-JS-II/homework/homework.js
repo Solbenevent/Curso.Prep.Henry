@@ -9,7 +9,7 @@ function obtenerMayor(x, y) {
     return x
   } else if (x < y) { return y }
   else { return x || y };
-} //if (x>y) {return x}; return y; 
+} // if (x === y) return x; return math.max(x,y);
 
 function mayoriaDeEdad(edad) {
   //Determinar si la persona según su edad puede ingresar a un evento.
@@ -18,7 +18,7 @@ function mayoriaDeEdad(edad) {
   if (edad >= 18) {
     return "Allowed"
   } else { return "Not allowed" };
-}
+} // return edad >=18 "allowed" : "not allowed" (a veces no es lo mas optimo)
 
 function conection(status) {
   //Recibimos un estado de conexión de un usuario representado por un valor numérico. 
@@ -29,8 +29,10 @@ function conection(status) {
   if (status === 1) { return "Online" }
   else if (status === 2) { return "Away" }
   else { return "Offline" };
-}
-
+}  // if (status === 1) return online
+//if (status === 2) return "away"
+//return "offline"
+//tambien con el switch: switch(status) casi 1: ; case 2: ; case 3: etc
 function saludo(idioma) {
   // Devuelve un saludo en tres diferentes lenguajes:
   // Si "idioma" es "aleman", devuelve "Guten Tag!"
@@ -42,8 +44,14 @@ function saludo(idioma) {
   else if (idioma === "mandarin") { return "Ni Hao!" }
   else if (idioma === "ingles") { return "Hello!" }
   else { return "Hola!" };
+}  /* switch(idioma) {
+  case "aleman" : return "guten tag";
+  case "mandarin" : return "ni hao";
+  case "ingles" : return "hello";
+  default:
+    return "hola";
 }
-
+*/
 function colors(color) {
   //La función recibe un color. Devolver el string correspondiente:
   //En caso que el color recibido sea "blue", devuleve --> "This is blue"
@@ -65,7 +73,7 @@ function colors(color) {
       return "Color not found";
       break;
   }
-}
+} // tambien podria usarse con el if pero es menos codigo así
 
 function esDiezOCinco(numero) {
   // Devuelve "true" si "numero" es 10 o 5
@@ -95,7 +103,7 @@ function esEntero(numero) {
   if (numero === Math.floor(numero)) {
     return true
   } return false;
-}
+} // return Number.isInteger(numero) . es mas intuitiva
 
 function fizzBuzz(numero) {
   // Si "numero" es divisible entre 3, devuelve "fizz"
@@ -123,7 +131,7 @@ function operadoresLogicos(num1, num2, num3) {
   } else if (num1 > num2 && num1 > num3 && num1 > 0) {
     return "Número 1 es mayor y positivo";
   } else if (num3 > num1 && num3 > num2) {
-    return num3 + 1;
+    return num3 + 1; //num3++ 
   } return false;
 }
 
